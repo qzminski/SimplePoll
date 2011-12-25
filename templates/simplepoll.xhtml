@@ -1,0 +1,56 @@
+
+<!-- indexer::stop -->
+<div class="<?php echo $this->class; ?><?php if ($this->featured): ?> featured<?php endif; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<?php if ($this->headline): ?>
+
+<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+<?php endif; ?>
+
+<p class="poll_title"><?php echo $this->title; ?></p>
+<?php echo $this->messages; ?>
+<?php if ($this->showResults): ?>
+
+<div class="results">
+<ul>
+<?php foreach ($this->results as $i => $result): ?>
+<li class="result_<?php echo $i; ?>"><div class="result_bar" style="width:<?php echo $result['prcnt']; ?>%;"></div><div class="result_option"><?php echo $result['prcnt']; ?>% - <?php echo $result['title']; ?></div></li>
+<?php endforeach; ?>
+</ul>
+</div>
+<?php endif; ?>
+<?php if ($this->showForm): ?>
+
+<div class="form">
+<form action="<?php echo $this->action; ?>" id="<?php echo $this->formId; ?>" method="post">
+<div class="formbody">
+<input type="hidden" name="FORM_SUBMIT" value="<?php echo $this->formId; ?>" />
+<input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}" />
+<div class="widget">
+  <?php echo $this->options->generateWithError(); ?>
+</div>
+<div class="submit_container">
+<?php if ($this->voteButton): ?>
+  <input type="submit" class="submit" value="<?php echo $this->voteButton; ?>" />
+<?php endif; ?>
+<?php if ($this->resultsButton): ?>
+  <input type="submit" class="submit" name="results" value="<?php echo $this->resultsButton; ?>" />
+<?php endif; ?>
+</div>
+</div>
+</form>
+<?php if ($this->hasError): ?>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+try {
+  window.scrollTo(null, ($('<?php echo $this->formId; ?>').getElement('p.error').getPosition().y - 20));
+} catch(e) {}
+/* ]]> */
+</script>
+<?php endif; ?>
+
+</div>
+<?php endif; ?>
+
+</div>
+<!-- indexer::continue -->

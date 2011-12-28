@@ -161,7 +161,7 @@ class SimplePoll extends Hybrid
 									 ->execute($this->id);
 
 		// Display results if poll is closed or visitor has already voted
-		if ($objPoll->closed || ($this->Input->post('FORM_SUBMIT') == $strFormId && $this->Input->post('results') && $objPoll->showResults) || $this->hasVoted($arrIps, $objPoll->id) || (($arrRow['start'] != '' && $arrRow['start'] > $time) && ($arrRow['stop'] != '' && $arrRow['stop'] < $time)))
+		if ($objPoll->closed || ($this->Input->get('results') == $objPoll->id && $objPoll->showResults) || $this->hasVoted($arrIps, $objPoll->id) || (($arrRow['start'] != '' && $arrRow['start'] > $time) && ($arrRow['stop'] != '' && $arrRow['stop'] < $time)))
 		{
 			$arrResults = array();
 			$intVotes = array_sum($objOptions->fetchEach('votes'));
@@ -213,14 +213,14 @@ class SimplePoll extends Hybrid
 
 		$this->Template->showForm = true;
 		$this->Template->options = $objWidget;
-		$this->Template->voteButton = ($objPoll->protected && !FE_USER_LOGGED_IN) ? '' : $GLOBALS['TL_LANG']['MSC']['vote'];
-		$this->Template->resultsButton = ($objPoll->showResults) ? $GLOBALS['TL_LANG']['MSC']['showResults'] : '';
+		$this->Template->submit = ($objPoll->protected && !FE_USER_LOGGED_IN) ? '' : $GLOBALS['TL_LANG']['MSC']['vote'];
+		$this->Template->resultsLink = ($objPoll->showResults) ? sprintf('<a href="%s" title="%s">%s</a>', $this->Environment->request . (($GLOBALS['TL_CONFIG']['disableAlias'] || strpos($this->Environment->request, '?') !== false) ? '&amp;' : '?') . 'results=' . $objPoll->id, specialchars($GLOBALS['TL_LANG']['MSC']['showResults']), $GLOBALS['TL_LANG']['MSC']['showResults']) : '';
 		$this->Template->action = ampersand($this->Environment->request);
 		$this->Template->formId = $strFormId;
 		$this->Template->hasError = $doNotSubmit;
 
 		// Add the vote
-		if ($this->Input->post('FORM_SUBMIT') == $strFormId && !$doNotSubmit && !$this->Input->post('results'))
+		if ($this->Input->post('FORM_SUBMIT') == $strFormId && !$doNotSubmit)
 		{
 			if ($objPoll->protected && !FE_USER_LOGGED_IN)
 			{

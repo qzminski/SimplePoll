@@ -29,12 +29,10 @@
   <?php echo $this->options->generateWithError(); ?>
 </div>
 <div class="submit_container">
-<?php if ($this->voteButton): ?>
-  <input type="submit" class="submit" value="<?php echo $this->voteButton; ?>">
+<?php if ($this->submit): ?>
+  <input type="submit" class="submit" value="<?php echo $this->submit; ?>">
 <?php endif; ?>
-<?php if ($this->resultsButton): ?>
-  <input type="submit" class="submit" name="results" value="<?php echo $this->resultsButton; ?>">
-<?php endif; ?>
+<?php echo $this->resultsLink; ?>
 </div>
 </div>
 </form>

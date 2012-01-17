@@ -44,7 +44,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['simplepoll_id'] = array
 	'exclude'                 => true,
 	'inputType'               => 'select',
 	'options_callback'        => array('tl_content_simplepoll', 'getPolls'),
-	'eval'                    => array('mandatory'=>true, 'includeBlankOption'=>true, 'tl_class'=>'w50')
+	'eval'                    => array('mandatory'=>true, 'includeBlankOption'=>true, 'chosen'=>true, 'tl_class'=>'w50')
 );
 
 

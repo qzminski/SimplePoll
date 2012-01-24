@@ -59,12 +59,6 @@ class SimplePoll extends Hybrid
 	protected $strTemplate = 'simplepoll';
 
 	/**
-	 * Current record
-	 * @var array
-	 */
-	protected $arrData = array();
-
-	/**
 	 * Cookie name (prefix)
 	 * @var string
 	 */

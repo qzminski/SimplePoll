@@ -146,7 +146,7 @@ class SimplePoll extends Hybrid
 
 		$time = time();
 		$arrIps = deserialize($objPoll->ips, true);
-		$strFormId = 'poll_' . $intId;
+		$strFormId = 'poll_' . $this->id;
 		$this->Template->title = $objPoll->title;
 		$this->Template->featured = $objPoll->featured ? true : false;
 		$this->Template->messages = $this->getMessages();

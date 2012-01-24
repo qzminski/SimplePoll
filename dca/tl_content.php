@@ -32,7 +32,7 @@
 /**
  * Add a palette to tl_content
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['simplepoll'] = '{type_legend},type,headline;{poll_legend},simplepoll_id;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['simplepoll'] = '{type_legend},type,headline;{include_legend},simplepoll_id;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 
 /**

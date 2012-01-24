@@ -34,10 +34,4 @@
  */
 $GLOBALS['TL_LANG']['tl_content']['simplepoll_id'] = array('Poll', 'Please select the poll to be displayed.');
 
-
-/**
- * Legends
- */
-$GLOBALS['TL_LANG']['tl_content']['poll_legend'] = 'Poll configuration';
-
 ?>

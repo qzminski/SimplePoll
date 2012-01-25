@@ -59,12 +59,6 @@ class SimplePoll extends Hybrid
 	protected $strTemplate = 'simplepoll';
 
 	/**
-	 * Current record
-	 * @var array
-	 */
-	protected $arrData = array();
-
-	/**
 	 * Cookie name (prefix)
 	 * @var string
 	 */
@@ -152,7 +146,7 @@ class SimplePoll extends Hybrid
 
 		$time = time();
 		$arrIps = deserialize($objPoll->ips, true);
-		$strFormId = 'poll_' . $intId;
+		$strFormId = 'poll_' . $this->id;
 		$this->Template->title = $objPoll->title;
 		$this->Template->featured = $objPoll->featured ? true : false;
 		$this->Template->messages = $this->getMessages();
@@ -339,7 +333,7 @@ class SimplePoll extends Hybrid
 
 				if ($blnMultilingual)
 				{
-					$strQuery = "SELECT t1.*, " . implode(', ', $arrFields) . " FROM tl_simplepoll_option t1 LEFT OUTER JOIN tl_simplepoll t2 ON t1.id=t2.lid AND t2.language='" . $GLOBALS['TL_LANGUAGE'] . "' WHERE t1.lid=0" . (!BE_USER_LOGGED_IN ? " AND t1.published=1" : "") . " ORDER BY t1.sorting";
+					$strQuery = "SELECT t1.*, " . implode(', ', $arrFields) . " FROM tl_simplepoll_option t1 LEFT OUTER JOIN tl_simplepoll t2 ON t1.id=t2.lid AND t2.language='" . $GLOBALS['TL_LANGUAGE'] . "' WHERE t1.lid=0 AND t1.pid=?" . (!BE_USER_LOGGED_IN ? " AND t1.published=1" : "") . " ORDER BY t1.sorting";
 				}
 				break;
 		}

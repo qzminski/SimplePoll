@@ -39,7 +39,7 @@ $this->loadDataContainer('tl_content');
 /**
  * Add a palette to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['simplepoll'] = '{title_legend},name,headline,type;{config_legend},simplepoll_id;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['simplepoll'] = '{title_legend},name,headline,type;{include_legend},simplepoll_id;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 
 /**

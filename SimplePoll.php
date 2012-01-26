@@ -325,7 +325,7 @@ class SimplePoll extends Hybrid
 
 				if ($blnMultilingual)
 				{
-					$strQuery = "SELECT t1.*, " . implode(', ', $arrFields) . ", (SELECT COUNT(*) FROM tl_simplepoll_option WHERE pid=t1.id) AS options FROM tl_simplepoll t1 LEFT OUTER JOIN tl_simplepoll t2 ON t1.id=t2.lid AND t2.language='" . $GLOBALS['TL_LANGUAGE'] . "' WHERE t1.lid=0" . (!BE_USER_LOGGED_IN ? " AND t1.published=1" : "");
+					$strQuery = "SELECT t1.*, " . implode(', ', $arrFields) . ", (SELECT COUNT(*) FROM tl_simplepoll_option WHERE pid=t1.id) AS options FROM tl_simplepoll t1 LEFT OUTER JOIN tl_simplepoll t2 ON t1.id=t2.lid AND t2.language='" . $GLOBALS['TL_LANGUAGE'] . "' WHERE t1.lid=0 AND t1.id=?" . (!BE_USER_LOGGED_IN ? " AND t1.published=1" : "");
 				}
 				break;
 

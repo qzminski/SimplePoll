@@ -22,7 +22,6 @@
  *
  * PHP version 5
  * @copyright  Kamil Kuzminski 2011 
- * @author     Kamil Kuzminski <http://qzminski.com> 
  * @author     Andreas Schempp <andreas@schempp.ch>
  * @package    SimplePoll 
  * @license    LGPL 
@@ -33,6 +32,6 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_content']['simplepoll'] = array('Poll', 'Please select the poll to be displayed.');
+$GLOBALS['TL_LANG']['tl_content']['simplepoll'] = array('Umfrage', 'Bitte wählen Sie die gewünschte Umfrage aus.');
 
 ?>

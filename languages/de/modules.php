@@ -22,7 +22,6 @@
  *
  * PHP version 5
  * @copyright  Kamil Kuzminski 2011 
- * @author     Kamil Kuzminski <http://qzminski.com> 
  * @author     Andreas Schempp <andreas@schempp.ch>
  * @package    SimplePoll 
  * @license    LGPL 
@@ -31,8 +30,14 @@
 
 
 /**
- * Fields
+ * Back end modules
  */
-$GLOBALS['TL_LANG']['tl_content']['simplepoll'] = array('Poll', 'Please select the poll to be displayed.');
+$GLOBALS['TL_LANG']['MOD']['simplepoll'] = array('Umfragen', 'Erstellen Sie dynamische Umfragen welche per Inhaltselement oder Modul auf der Webseite eingebunden werden können.');
+
+
+/**
+ * Front end modules
+ */
+$GLOBALS['TL_LANG']['FMD']['simplepoll'] = array('Umfrage', 'Eine Umfrage anzeigen.');
 
 ?>

@@ -23,6 +23,7 @@
  * PHP version 5
  * @copyright  Kamil Kuzminski 2011 
  * @author     Kamil Kuzminski <http://qzminski.com> 
+ * @author     Andreas Schempp <andreas@schempp.ch>
  * @package    SimplePoll 
  * @license    LGPL 
  * @filesource
@@ -48,11 +49,11 @@ $GLOBALS['TL_LANG']['tl_simplepoll_option']['publish_legend'] = 'Publish setting
  * Buttons
  */
 $GLOBALS['TL_LANG']['tl_simplepoll_option']['new']        = array('New option', 'Create a new option');
-$GLOBALS['TL_LANG']['tl_simplepoll_option']['show']       = array('Option details', 'Show the details of option ID %s');
 $GLOBALS['TL_LANG']['tl_simplepoll_option']['edit']       = array('Edit option', 'Edit option ID %s');
-$GLOBALS['TL_LANG']['tl_simplepoll_option']['editheader'] = array('Edit option settings', 'Edit the settings of option ID %s');
+$GLOBALS['TL_LANG']['tl_simplepoll_option']['editheader'] = array('Edit poll settings', 'Edit the settings of poll ID %s');
 $GLOBALS['TL_LANG']['tl_simplepoll_option']['copy']       = array('Duplicate option', 'Duplicate option ID %s');
 $GLOBALS['TL_LANG']['tl_simplepoll_option']['delete']     = array('Delete option', 'Delete option ID %s');
+$GLOBALS['TL_LANG']['tl_simplepoll_option']['show']       = array('Option details', 'Show the details of option ID %s');
 $GLOBALS['TL_LANG']['tl_simplepoll_option']['toggle']     = array('Publish/unpublish option', 'Publish/unpublish option ID %s');
 
 ?>

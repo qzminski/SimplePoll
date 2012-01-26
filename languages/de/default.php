@@ -22,17 +22,25 @@
  *
  * PHP version 5
  * @copyright  Kamil Kuzminski 2011 
- * @author     Kamil Kuzminski <http://qzminski.com> 
  * @author     Andreas Schempp <andreas@schempp.ch>
- * @package    SimplePoll 
+ * @package    Language
  * @license    LGPL 
  * @filesource
  */
 
 
 /**
- * Fields
+ * Content elements
  */
-$GLOBALS['TL_LANG']['tl_content']['simplepoll'] = array('Poll', 'Please select the poll to be displayed.');
+$GLOBALS['TL_LANG']['CTE']['simplepoll'] = array('Umfrage', 'Eine Umfrage anzeigen.');
+
+
+/**
+ * Miscellaneous
+ */
+$GLOBALS['TL_LANG']['MSC']['loginToVote']   = 'Melden Sie sich an um an der Umfrage teilzunehmen.';
+$GLOBALS['TL_LANG']['MSC']['vote']          = 'Abstimmen';
+$GLOBALS['TL_LANG']['MSC']['showResults']   = 'Resultate';
+$GLOBALS['TL_LANG']['MSC']['voteSubmitted'] = 'Danke für Ihre Teilnahme!';
 
 ?>

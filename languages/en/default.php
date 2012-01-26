@@ -23,6 +23,7 @@
  * PHP version 5
  * @copyright  Kamil Kuzminski 2011 
  * @author     Kamil Kuzminski <http://qzminski.com> 
+ * @author     Andreas Schempp <andreas@schempp.ch>
  * @package    Language
  * @license    LGPL 
  * @filesource

@@ -44,7 +44,7 @@ class SimplePoll extends Hybrid
 	 * Key
 	 * @var string
 	 */
-	protected $strKey = 'simplepoll_id';
+	protected $strKey = 'simplepoll';
 
 	/**
 	 * Table

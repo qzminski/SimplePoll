@@ -58,7 +58,7 @@ CREATE TABLE `tl_simplepoll_option` (
 -- 
 
 CREATE TABLE `tl_content` (
-  `simplepoll_id` int(10) unsigned NOT NULL default '0'
+  `simplepoll` int(10) unsigned NOT NULL default '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
@@ -69,5 +69,5 @@ CREATE TABLE `tl_content` (
 -- 
 
 CREATE TABLE `tl_module` (
-  `simplepoll_id` int(10) unsigned NOT NULL default '0'
+  `simplepoll` int(10) unsigned NOT NULL default '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

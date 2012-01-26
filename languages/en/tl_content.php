@@ -32,6 +32,6 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_content']['simplepoll_id'] = array('Poll', 'Please select the poll to be displayed.');
+$GLOBALS['TL_LANG']['tl_content']['simplepoll'] = array('Poll', 'Please select the poll to be displayed.');
 
 ?>

@@ -168,7 +168,7 @@ class SimplePoll extends Hybrid
 				$arrResults[] = array
 				(
 					'title' => $objOptions->title,
-					'prcnt' => round(($objOptions->votes / $intVotes), 2) * 100
+					'prcnt' => ($intVotes > 0 ) ? (round(($objOptions->votes / $intVotes), 2) * 100) : 0
 				);
 			}
 
@@ -259,6 +259,7 @@ class SimplePoll extends Hybrid
 		{
 			return true;
 		}
+
 		$arrIps = deserialize($arrIps);
 
 		// No votes have been made yet

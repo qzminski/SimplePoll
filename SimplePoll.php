@@ -209,7 +209,7 @@ class SimplePoll extends Hybrid
 		$this->Template->showForm = true;
 		$this->Template->options = $objWidget;
 		$this->Template->submit = ($objPoll->protected && !FE_USER_LOGGED_IN) ? '' : $GLOBALS['TL_LANG']['MSC']['vote'];
-		$this->Template->resultsLink = ($objPoll->showResults) ? sprintf('<a href="%s" title="%s">%s</a>', $this->Environment->request . (($GLOBALS['TL_CONFIG']['disableAlias'] || strpos($this->Environment->request, '?') !== false) ? '&amp;' : '?') . 'results=' . $objPoll->id, specialchars($GLOBALS['TL_LANG']['MSC']['showResults']), $GLOBALS['TL_LANG']['MSC']['showResults']) : '';
+		$this->Template->resultsLink = ($objPoll->showResults && !empty($arrIps)) ? sprintf('<a href="%s" title="%s">%s</a>', $this->Environment->request . (($GLOBALS['TL_CONFIG']['disableAlias'] || strpos($this->Environment->request, '?') !== false) ? '&amp;' : '?') . 'results=' . $objPoll->id, specialchars($GLOBALS['TL_LANG']['MSC']['showResults']), $GLOBALS['TL_LANG']['MSC']['showResults']) : '';
 		$this->Template->action = ampersand($this->Environment->request);
 		$this->Template->formId = $strFormId;
 		$this->Template->hasError = $doNotSubmit;

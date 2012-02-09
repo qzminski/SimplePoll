@@ -142,7 +142,7 @@ class SimplePoll extends Hybrid
 		// Display a "login to vote" message
 		if ($objPoll->protected && !FE_USER_LOGGED_IN)
 		{
-			$_SESSION['TL_INFO'][] = $GLOBALS['TL_LANG']['MSC']['loginToVote'];
+			$this->Template->messages = $GLOBALS['TL_LANG']['MSC']['loginToVote'];
 		}
 
 		$time = time();
@@ -150,7 +150,12 @@ class SimplePoll extends Hybrid
 		$strFormId = 'poll_' . $this->id;
 		$this->Template->title = $objPoll->title;
 		$this->Template->featured = $objPoll->featured ? true : false;
-		$this->Template->messages = $this->getMessages();
+		
+		if ($_SESSION['SIMPLEPOLL'][$this->id] != '')
+		{
+			$this->Template->messages = $_SESSION['SIMPLEPOLL'][$this->id];
+			unset($_SESSION['SIMPLEPOLL'][$this->id]);
+		}
 
 		$objOptions = $this->Database->prepare($this->getPollQuery('tl_simplepoll_option'))
 									 ->execute($this->id);
@@ -241,7 +246,7 @@ class SimplePoll extends Hybrid
 			$this->log('Submitted vote ID ' . $objWidget->value . ' in poll ID ' . $objPoll->id, 'SimplePoll addPollToTemplate()', TL_GENERAL);
 
 			// Reload the page
-			$_SESSION['TL_CONFIRM'][] = $GLOBALS['TL_LANG']['MSC']['voteSubmitted'];
+			$_SESSION['SIMPLEPOLL'][$this->id] = $GLOBALS['TL_LANG']['MSC']['voteSubmitted'];
 			$this->reload();
 		}
 	}

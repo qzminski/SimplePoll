@@ -33,7 +33,7 @@
  */
 $GLOBALS['TL_LANG']['MSC']['loginToVote']   = 'Identifie-toi pour pouvoir participer au sondage.';
 $GLOBALS['TL_LANG']['MSC']['vote']          = 'Voter';
-$GLOBALS['TL_LANG']['MSC']['showResults']   = 'Résultats';
+$GLOBALS['TL_LANG']['MSC']['showResults']   = 'RÃ©sultats';
 $GLOBALS['TL_LANG']['MSC']['voteSubmitted'] = 'Merci de ta participation!';
 
 ?>

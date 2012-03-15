@@ -46,8 +46,9 @@ $GLOBALS['TL_LANG']['tl_simplepoll']['stop']         = array('Anzeigen bis', 'Te
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_simplepoll']['title_legend']   = 'Titel und Status';
-$GLOBALS['TL_LANG']['tl_simplepoll']['publish_legend'] = 'Veröffentlichung';
+$GLOBALS['TL_LANG']['tl_simplepoll']['title_legend']    = 'Titel und Status';
+$GLOBALS['TL_LANG']['tl_simplepoll']['redirect_legend'] = 'Weiterleitung';
+$GLOBALS['TL_LANG']['tl_simplepoll']['publish_legend']  = 'Veröffentlichung';
 
 
 /**

@@ -21,8 +21,8 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Kamil Kuzminski 2011 
- * @author     Kamil Kuzminski <http://qzminski.com> 
+ * @copyright  Kamil Kuzminski 2011-2012 
+ * @author     Kamil Kuzminski <kamil.kuzminski@gmail.com> 
  * @author     Andreas Schempp <andreas@schempp.ch>
  * @package    SimplePoll 
  * @license    LGPL 
@@ -34,8 +34,8 @@
  * Class SimplePoll
  *
  * Provide methods to handle polls.
- * @copyright  Kamil Kuzminski 2011 
- * @author     Kamil Kuzminski <http://qzminski.com> 
+ * @copyright  Kamil Kuzminski 2011-2012 
+ * @author     Kamil Kuzminski <kamil.kuzminski@gmail.com> 
  * @package    SimplePoll
  */
 class SimplePoll extends Hybrid

@@ -21,7 +21,7 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Kamil Kuzminski 2011 
+ * @copyright  Kamil Kuzminski 2011-2012 
  * @author     Andreas Schempp <andreas@schempp.ch>
  * @package    SimplePoll 
  * @license    LGPL 

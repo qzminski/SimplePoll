@@ -60,7 +60,7 @@ class SimplePoll extends Hybrid
 	protected $strTemplate = 'simplepoll';
 
 	/**
-	 * Cookie name (prefix)
+	 * Cookie name prefix
 	 * @var string
 	 */
 	protected $strCookie = 'SIMPLEPOLL_';
@@ -245,9 +245,10 @@ class SimplePoll extends Hybrid
 			$this->Database->prepare("UPDATE tl_simplepoll SET ips=? WHERE id=?")->execute(serialize($arrIps), $objPoll->id);
 			$this->log('Submitted vote ID ' . $objWidget->value . ' in poll ID ' . $objPoll->id, 'SimplePoll addPollToTemplate()', TL_GENERAL);
 
-			// Reload the page
+
+			// Redirect or reload the page
 			$_SESSION['SIMPLEPOLL'][$this->id] = $GLOBALS['TL_LANG']['MSC']['voteSubmitted'];
-			$this->reload();
+			$this->jumpToOrReload($this->jumpTo);
 		}
 	}
 

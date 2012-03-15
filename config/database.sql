@@ -22,6 +22,7 @@ CREATE TABLE `tl_simplepoll` (
   `protected` char(1) NOT NULL default '',
   `featured` char(1) NOT NULL default '',
   `showResults` char(1) NOT NULL default '',
+  `jumpTo` int(10) unsigned NOT NULL default '0',
   `published` char(1) NOT NULL default '',
   `closed` char(1) NOT NULL default '',
   `start` varchar(10) NOT NULL default '',

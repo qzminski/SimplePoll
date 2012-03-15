@@ -48,8 +48,9 @@ $GLOBALS['TL_LANG']['tl_simplepoll']['tstamp']       = array('Revision date', 'D
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_simplepoll']['title_legend']   = 'Title and featured';
-$GLOBALS['TL_LANG']['tl_simplepoll']['publish_legend'] = 'Publish settings';
+$GLOBALS['TL_LANG']['tl_simplepoll']['title_legend']    = 'Title and featured';
+$GLOBALS['TL_LANG']['tl_simplepoll']['redirect_legend'] = 'Redirect settings';
+$GLOBALS['TL_LANG']['tl_simplepoll']['publish_legend']  = 'Publish settings';
 
 
 /**

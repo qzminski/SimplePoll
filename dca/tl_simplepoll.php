@@ -31,6 +31,12 @@
 
 
 /**
+ * Load tl_module language files
+ */
+$this->loadLanguageFile('tl_module');
+
+
+/**
  * Table tl_simplepoll 
  */
 $GLOBALS['TL_DCA']['tl_simplepoll'] = array
@@ -126,7 +132,7 @@ $GLOBALS['TL_DCA']['tl_simplepoll'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'default'                     => '{title_legend},title,voteInterval,protected,featured,showResults;{publish_legend},published,closed,start,stop'
+		'default'                     => '{title_legend},title,voteInterval,protected,featured,showResults;{redirect_legend:hide},jumpTo;{publish_legend},published,closed,start,stop'
 	),
 
 	// Fields
@@ -171,6 +177,14 @@ $GLOBALS['TL_DCA']['tl_simplepoll'] = array
 			'filter'                  => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'clr')
+		),
+		'jumpTo' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_module']['jumpTo'],
+			'exclude'                 => true,
+			'filter'                  => true,
+			'inputType'               => 'pageTree',
+			'eval'                    => array('fieldType'=>'radio', 'tl_class'=>'clr')
 		),
 		'published' => array
 		(

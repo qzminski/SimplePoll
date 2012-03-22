@@ -132,7 +132,7 @@ $GLOBALS['TL_DCA']['tl_simplepoll'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'default'                     => '{title_legend},title,voteInterval,protected,featured,showResults;{redirect_legend:hide},jumpTo;{publish_legend},published,closed,start,stop'
+		'default'                     => '{title_legend},title,voteInterval,protected,featured,behaviorNotVoted,behaviorVoted;{redirect_legend:hide},jumpTo;{publish_legend},published,closed,start,stop'
 	),
 
 	// Fields
@@ -170,13 +170,25 @@ $GLOBALS['TL_DCA']['tl_simplepoll'] = array
 			'inputType'               => 'checkbox',
 			'eval'                    => array('tl_class'=>'w50')
 		),
-		'showResults' => array
+		'behaviorNotVoted' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_simplepoll']['showResults'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorNotVoted'],
+			'default'                 => 'opt1',
 			'exclude'                 => true,
-			'filter'                  => true,
-			'inputType'               => 'checkbox',
-			'eval'                    => array('tl_class'=>'clr')
+			'inputType'               => 'radio',
+			'options'                 => array('opt1', 'opt2'),
+			'reference'               => &$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorNotVoted'],
+			'eval'                    => array('multiple'=>true, 'tl_class'=>'w50')
+		),
+		'behaviorVoted' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorVoted'],
+			'default'                 => 'opt1',
+			'exclude'                 => true,
+			'inputType'               => 'radio',
+			'options'                 => array('opt1', 'opt2', 'opt3'),
+			'reference'               => &$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorVoted'],
+			'eval'                    => array('multiple'=>true, 'tl_class'=>'w50')
 		),
 		'jumpTo' => array
 		(

@@ -33,16 +33,17 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_simplepoll']['title']        = array('Title', 'Please enter the poll title.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['voteInterval'] = array('Vote interval', 'Here you can set the time value in seconds before a user can vote again. Set to 0 if vote can be made only once.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['protected']    = array('Protected poll', 'Only the logged in users will be able to vote.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['featured']     = array('Feature poll', 'Mark the poll as featured.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['showResults']  = array('Add a "show results" link', 'Adds a "show results" link to the template.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['published']    = array('Publish poll', 'Make the poll publicly visible on the website.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['closed']       = array('Close poll', 'Close the poll and display results. Voting will not be possible anymore!');
-$GLOBALS['TL_LANG']['tl_simplepoll']['start']        = array('Show from', 'Disable voting the poll on the website before this day.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['stop']         = array('Show until', 'Disable voting the poll on the website on and after this day.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['tstamp']       = array('Revision date', 'Date and time of the latest revision');
+$GLOBALS['TL_LANG']['tl_simplepoll']['title']            = array('Title', 'Please enter the poll title.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['voteInterval']     = array('Vote interval', 'Here you can set the time value in seconds before a user can vote again. Set to 0 if vote can be made only once.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['protected']        = array('Protected poll', 'Only the logged in users will be able to vote.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['featured']         = array('Feature poll', 'Mark the poll as featured.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorNotVoted'] = array('User has not voted', 'Please specify the behavior if the user has not voted.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorVoted']    = array('User has voted', 'Please specify the behavior if the user has voted.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['published']        = array('Publish poll', 'Make the poll publicly visible on the website.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['closed']           = array('Close poll', 'Close the poll and disable voting.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['start']            = array('Show from', 'Disable voting the poll on the website before this day.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['stop']             = array('Show until', 'Disable voting the poll on the website on and after this day.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['tstamp']           = array('Revision date', 'Date and time of the latest revision');
 
 
 /**
@@ -51,6 +52,16 @@ $GLOBALS['TL_LANG']['tl_simplepoll']['tstamp']       = array('Revision date', 'D
 $GLOBALS['TL_LANG']['tl_simplepoll']['title_legend']    = 'Title and featured';
 $GLOBALS['TL_LANG']['tl_simplepoll']['redirect_legend'] = 'Redirect settings';
 $GLOBALS['TL_LANG']['tl_simplepoll']['publish_legend']  = 'Publish settings';
+
+
+/**
+ * Reference
+ */
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorNotVoted']['opt1'] = 'Display a "show results" link';
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorNotVoted']['opt2'] = 'Do not show results at all';
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorVoted']['opt1']    = 'Show results immedietally';
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorVoted']['opt2']    = 'Display a "show results" link';
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorVoted']['opt3']    = 'Do not show results at all';
 
 
 /**

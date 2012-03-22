@@ -126,6 +126,7 @@ class SimplePoll extends Hybrid
 	 */
 	protected function compile()
 	{
+		$this->Template->message = '';
 		$this->Template->showResults = false;
 		$this->Template->showForm = false;
 
@@ -142,26 +143,32 @@ class SimplePoll extends Hybrid
 		// Display a "login to vote" message
 		if ($objPoll->protected && !FE_USER_LOGGED_IN)
 		{
-			$this->Template->messages = $GLOBALS['TL_LANG']['MSC']['loginToVote'];
+			$this->Template->mclass = 'info';
+			$this->Template->message = $GLOBALS['TL_LANG']['MSC']['loginToVote'];
 		}
 
 		$time = time();
 		$arrIps = deserialize($objPoll->ips, true);
+		$blnClosed = ($objPoll->closed || (($arrRow['start'] != '' && $arrRow['start'] > $time) && ($arrRow['stop'] != '' && $arrRow['stop'] < $time))) ? true : false;
+		$blnHasVoted = $this->hasVoted($arrIps, $objPoll->id);
 		$strFormId = 'poll_' . $this->id;
+
 		$this->Template->title = $objPoll->title;
 		$this->Template->featured = $objPoll->featured ? true : false;
-		
+
+		// Display a confirmation message
 		if ($_SESSION['SIMPLEPOLL'][$this->id] != '')
 		{
-			$this->Template->messages = $_SESSION['SIMPLEPOLL'][$this->id];
+			$this->Template->mclass = 'confirm';
+			$this->Template->message = $_SESSION['SIMPLEPOLL'][$this->id];
 			unset($_SESSION['SIMPLEPOLL'][$this->id]);
 		}
 
 		$objOptions = $this->Database->prepare($this->getPollQuery('tl_simplepoll_option'))
 									 ->execute($this->id);
 
-		// Display results if poll is closed or visitor has already voted
-		if ($objPoll->closed || ($this->Input->get('results') == $objPoll->id && $objPoll->showResults) || $this->hasVoted($arrIps, $objPoll->id) || (($arrRow['start'] != '' && $arrRow['start'] > $time) && ($arrRow['stop'] != '' && $arrRow['stop'] < $time)))
+		// Display results under certain circumstances
+		if ((!$blnHasVoted && $this->behaviorNotVoted == 'opt1' && $this->Input->get('results') == $objPoll->id) || ($blnHasVoted && $this->behaviorVoted == 'opt1') || ($blnHasVoted && $this->behaviorVoted == 'opt2' && $this->Input->get('results') == $objPoll->id))
 		{
 			$arrResults = array();
 			$intVotes = array_sum($objOptions->fetchEach('votes'));
@@ -213,18 +220,24 @@ class SimplePoll extends Hybrid
 
 		$this->Template->showForm = true;
 		$this->Template->options = $objWidget;
-		$this->Template->submit = ($objPoll->protected && !FE_USER_LOGGED_IN) ? '' : $GLOBALS['TL_LANG']['MSC']['vote'];
-		$this->Template->resultsLink = ($objPoll->showResults && !empty($arrIps)) ? sprintf('<a href="%s" title="%s">%s</a>', $this->Environment->request . (($GLOBALS['TL_CONFIG']['disableAlias'] || strpos($this->Environment->request, '?') !== false) ? '&amp;' : '?') . 'results=' . $objPoll->id, specialchars($GLOBALS['TL_LANG']['MSC']['showResults']), $GLOBALS['TL_LANG']['MSC']['showResults']) : '';
+		$this->Template->submit = ($blnClosed || $blnHasVoted || $objPoll->protected && !FE_USER_LOGGED_IN) ? '' : $GLOBALS['TL_LANG']['MSC']['vote'];
 		$this->Template->action = ampersand($this->Environment->request);
 		$this->Template->formId = $strFormId;
 		$this->Template->hasError = $doNotSubmit;
+		$this->Template->resultsLink = '';
+
+		// Display the results link
+		if ((!$blnHasVoted && $this->behaviorNotVoted == 'opt1') || ($blnHasVoted && $this->behaviorVoted == 'opt2'))
+		{
+			$this->Template->resultsLink = sprintf('<a href="%s" title="%s">%s</a>', $this->Environment->request . (($GLOBALS['TL_CONFIG']['disableAlias'] || strpos($this->Environment->request, '?') !== false) ? '&amp;' : '?') . 'results=' . $objPoll->id, specialchars($GLOBALS['TL_LANG']['MSC']['showResults']), $GLOBALS['TL_LANG']['MSC']['showResults']);
+		}
 
 		// Add the vote
 		if ($this->Input->post('FORM_SUBMIT') == $strFormId && !$doNotSubmit)
 		{
-			if ($objPoll->protected && !FE_USER_LOGGED_IN)
+			if ($blnClosed || $blnHasVoted || $objPoll->protected && !FE_USER_LOGGED_IN)
 			{
-				return;
+				$this->reload();
 			}
 
 			$this->import('FrontendUser', 'User');

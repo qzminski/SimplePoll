@@ -36,7 +36,6 @@ $GLOBALS['TL_LANG']['tl_simplepoll']['title']        = array('Titel', 'Geben Sie
 $GLOBALS['TL_LANG']['tl_simplepoll']['voteInterval'] = array('Teilnahme-Abstand', 'Geben Sie ein für wieviele Sekunden ein Person gesperrt ist, bevor er ein zweites Mal teilnehmen kann. Geben Sie 0 wenn nur eine Teilnahme erlaubt ist.');
 $GLOBALS['TL_LANG']['tl_simplepoll']['protected']    = array('Umfrage schützen', 'Nur angemeldete Mitglieder können teilnehmen.');
 $GLOBALS['TL_LANG']['tl_simplepoll']['featured']     = array('Umfrage hervorheben', 'Die Umfrage als "hervorgehoben" markieren.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['showResults']  = array('"Resultate" Button hinzufügen', 'Fügt einen Button hinzu, mit dem die Resultate angezeigt werden können.');
 $GLOBALS['TL_LANG']['tl_simplepoll']['published']    = array('Umfrage veröffentlichen', 'Die Umfrage auf der Webseite anzeigen.');
 $GLOBALS['TL_LANG']['tl_simplepoll']['closed']       = array('Umfrage schließen', 'Umfrage schließen und die Resultate anzeigen.');
 $GLOBALS['TL_LANG']['tl_simplepoll']['start']        = array('Anzeigen von', 'Teilnahmen sind erst ab diesem Tag möglich.');

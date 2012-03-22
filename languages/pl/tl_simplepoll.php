@@ -33,16 +33,17 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_simplepoll']['title']        = array('Tytuł', 'Wprowadź tytuł sondy.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['voteInterval'] = array('Odstęp między głosowaniem', 'Tutaj możesz wprowadzić czas w sekundach, po którym użytkownik będzie mógł ponownie zagłosować. Ustaw 0 jeśli można zagłosować tylko raz.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['protected']    = array('Sonda chroniona', 'Tylko zalogowani użytkownicy będą mogli głosować.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['featured']     = array('Wyróźnij sondę', 'Oznacz tę sondę jako wyróżnioną.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['showResults']  = array('Dodaj link "pokaż wyniki"', 'Dodaj link "pokaż wyniki" do szablonu.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['published']    = array('Publikuj sondę', 'Publikując tę sondę będzie ona widoczna na stronie.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['closed']       = array('Zamknij sondę', 'Zamknij sondę i wyświetl wyniki. Voting will not be possible anymore!');
-$GLOBALS['TL_LANG']['tl_simplepoll']['start']        = array('Pokaż od', 'Wyłącz możliwość głosowania przed tym dniem.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['stop']         = array('Pokaż do', 'Wyłącz możliwość głosowania w tym i po tym dniu.');
-$GLOBALS['TL_LANG']['tl_simplepoll']['tstamp']       = array('Data modyfikacji', 'Data i czas ostatniej modyfikacji.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['title']            = array('Tytuł', 'Wprowadź tytuł sondy.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['voteInterval']     = array('Odstęp między głosowaniem', 'Tutaj możesz wprowadzić czas w sekundach, po którym użytkownik będzie mógł ponownie zagłosować. Ustaw 0 jeśli można zagłosować tylko raz.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['protected']        = array('Sonda chroniona', 'Tylko zalogowani użytkownicy będą mogli głosować.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['featured']         = array('Wyróźnij sondę', 'Oznacz tę sondę jako wyróżnioną.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorNotVoted'] = array('Użytkownik nie zagłosował', 'Określ zachowanie sondy jeśli użytkownik nie zagłosował.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorVoted']    = array('Użytkownik zagłosował', 'Określ zachowanie sondy jeśli użytkownik zagłosował.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['published']        = array('Publikuj sondę', 'Publikując tę sondę będzie ona widoczna na stronie.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['closed']           = array('Zamknij sondę', 'Zamknij sondę i wyłącz możliwość głosowania!');
+$GLOBALS['TL_LANG']['tl_simplepoll']['start']            = array('Pokaż od', 'Wyłącz możliwość głosowania przed tym dniem.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['stop']             = array('Pokaż do', 'Wyłącz możliwość głosowania w tym i po tym dniu.');
+$GLOBALS['TL_LANG']['tl_simplepoll']['tstamp']           = array('Data modyfikacji', 'Data i czas ostatniej modyfikacji.');
 
 
 /**
@@ -51,6 +52,16 @@ $GLOBALS['TL_LANG']['tl_simplepoll']['tstamp']       = array('Data modyfikacji',
 $GLOBALS['TL_LANG']['tl_simplepoll']['title_legend']    = 'Tytuł i wyróżnienie';
 $GLOBALS['TL_LANG']['tl_simplepoll']['redirect_legend'] = 'Opcje przekierowania';
 $GLOBALS['TL_LANG']['tl_simplepoll']['publish_legend']  = 'Ustawienia publikacji';
+
+
+/**
+ * Reference
+ */
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorNotVoted']['opt1'] = 'Wyświetl link "pokaż wyniki"';
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorNotVoted']['opt2'] = 'Nie pokazuj wyników wcale';
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorVoted']['opt1']    = 'Pokaż wyniki natychmiastowo';
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorVoted']['opt2']    = 'Wyświetli link "pokaż wyniki"';
+$GLOBALS['TL_LANG']['tl_simplepoll']['behaviorVoted']['opt3']    = 'Nie pokazuj wyników wcale';
 
 
 /**

@@ -7,7 +7,9 @@
 <?php endif; ?>
 
 <p class="poll_title"><?php echo $this->title; ?></p>
-<?php echo $this->messages; ?>
+<?php if ($this->message): ?>
+<p class="<?php echo $this->mclass; ?>"><?php echo $this->message; ?></p>
+<?php endif; ?>
 <?php if ($this->showResults): ?>
 
 <div class="results">

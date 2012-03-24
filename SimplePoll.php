@@ -180,11 +180,13 @@ class SimplePoll extends Hybrid
 				$arrResults[] = array
 				(
 					'title' => $objOptions->title,
+					'votes' => $objOptions->votes,
 					'prcnt' => ($intVotes > 0 ) ? (round(($objOptions->votes / $intVotes), 2) * 100) : 0
 				);
 			}
 
 			$this->Template->showResults = true;
+			$this->Template->total = $intVotes;
 			$this->Template->results = $arrResults;
 			return;
 		}

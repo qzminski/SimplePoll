@@ -1,6 +1,6 @@
 <?php
 /**
- * TL_ROOT/system/modules/simplepoll/languages/fr/default.php 
+ * TL_ROOT/system/modules/simplepoll/languages/fr/modules.php 
  * 
  * Contao extension: simplepoll 1.3.0 stable 
  * French translation file 
@@ -15,11 +15,9 @@
  * permanent text corrections which are update-safe. 
  */
  
-$GLOBALS['TL_LANG']['CTE']['simplepoll']['0'] = "Sondage";
-$GLOBALS['TL_LANG']['CTE']['simplepoll']['1'] = "Affiche un sondage.";
-$GLOBALS['TL_LANG']['MSC']['loginToVote'] = "Veuillez, s'il vous plaît, vous identifier pour voter.";
-$GLOBALS['TL_LANG']['MSC']['vote'] = "Voter";
-$GLOBALS['TL_LANG']['MSC']['showResults'] = "Afficher les résultats";
-$GLOBALS['TL_LANG']['MSC']['voteSubmitted'] = "Merci d'avoir voté !";
+$GLOBALS['TL_LANG']['MOD']['simplepoll']['0'] = "Sondages";
+$GLOBALS['TL_LANG']['MOD']['simplepoll']['1'] = "Gérer les sondages et leurs options.";
+$GLOBALS['TL_LANG']['FMD']['simplepoll']['0'] = "Sondage";
+$GLOBALS['TL_LANG']['FMD']['simplepoll']['1'] = "Affiche un sondage sur la page.";
  
 ?>

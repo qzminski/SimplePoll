@@ -65,6 +65,12 @@ $GLOBALS['TL_LANG']['tl_simplepoll']['behaviorVoted']['opt3']    = 'Do not show 
 
 
 /**
+ * Miscellaneous
+ */
+$GLOBALS['TL_LANG']['tl_simplepoll']['closedPoll'] = 'Closed';
+
+
+/**
  * Buttons
  */
 $GLOBALS['TL_LANG']['tl_simplepoll']['new']        = array('New poll', 'Create a new poll');

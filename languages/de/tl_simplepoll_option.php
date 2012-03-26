@@ -45,6 +45,13 @@ $GLOBALS['TL_LANG']['tl_simplepoll_option']['publish_legend'] = 'Veröffentlichu
 
 
 /**
+ * Miscellaneous
+ */
+$GLOBALS['TL_LANG']['tl_simplepoll_option']['voteSingle'] = '%s Stimme';
+$GLOBALS['TL_LANG']['tl_simplepoll_option']['votePlural'] = '%s Stimmen';
+
+
+/**
  * Buttons
  */
 $GLOBALS['TL_LANG']['tl_simplepoll_option']['new']        = array('Neue Option', 'Eine neue Option zur Umfrage hinzufügen');

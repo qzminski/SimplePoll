@@ -171,7 +171,7 @@ class tl_simplepoll_option extends Backend
 		$arrVotes = $this->Database->prepare("SELECT votes FROM tl_simplepoll_option WHERE pid=?")->execute($arrRow['pid'])->fetchEach('votes');
 		$width = $arrRow['votes'] ? (round(($arrRow['votes'] / array_sum($arrVotes)), 2) * 150) : 0;
 
-		return '<div><div style="display:inline-block;margin-right:8px;background-color:#8AB858;height:10px;width:' . $width . 'px;"></div>' . $arrRow['title'] . ' <span style="padding-left:3px;color:#b3b3b3;">[' . $arrRow['votes'] . ' vote' . (($arrRow['votes'] == 1) ? '' : 's') . ']</span></div>';
+		return '<div><div style="display:inline-block;margin-right:8px;background-color:#8AB858;height:10px;width:' . $width . 'px;"></div>' . $arrRow['title'] . ' <span style="padding-left:3px;color:#b3b3b3;">[' . sprintf((($arrRow['votes'] == 1) ? $GLOBALS['TL_LANG']['tl_simplepoll_option']['voteSingle'] : $GLOBALS['TL_LANG']['tl_simplepoll_option']['votePlural']), $arrRow['votes']) . ']</span></div>';
 	}
 
 

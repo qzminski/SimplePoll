@@ -46,6 +46,13 @@ $GLOBALS['TL_LANG']['tl_simplepoll_option']['publish_legend'] = 'Ustawienia publ
 
 
 /**
+ * Miscellaneous
+ */
+$GLOBALS['TL_LANG']['tl_simplepoll_option']['voteSingle'] = 'głosów: %s';
+$GLOBALS['TL_LANG']['tl_simplepoll_option']['votePlural'] = 'głosów: %s';
+
+
+/**
  * Buttons
  */
 $GLOBALS['TL_LANG']['tl_simplepoll_option']['new']        = array('Nowa opcja', 'Dodaj nową opcję');

@@ -272,7 +272,7 @@ class tl_simplepoll extends Backend
 	{
 		if ($arrRow['closed'])
 		{
-			$strLabel .= ' <span style="padding-left:3px;color:#b3b3b3;">[Closed]</span>';
+			$strLabel .= ' <span style="padding-left:3px;color:#b3b3b3;">[' . $GLOBALS['TL_LANG']['tl_simplepoll']['closedPoll'] . ']</span>';
 		}
 
 		return $strLabel;

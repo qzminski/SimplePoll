@@ -51,6 +51,12 @@ $GLOBALS['TL_LANG']['tl_simplepoll']['publish_legend']  = 'Veröffentlichung';
 
 
 /**
+ * Miscellaneous
+ */
+$GLOBALS['TL_LANG']['tl_simplepoll']['closedPoll'] = 'Geschlossen';
+
+
+/**
  * Buttons
  */
 $GLOBALS['TL_LANG']['tl_simplepoll']['new']        = array('Neue Umfrage', 'Eine neue Umfrage anlegen');

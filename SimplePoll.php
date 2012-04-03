@@ -65,6 +65,12 @@ class SimplePoll extends Hybrid
 	 */
 	protected $strCookie = 'SIMPLEPOLL_';
 
+	/**
+	 * Module configuration
+	 * @var array
+	 */
+	protected $arrConfig = array();
+
 
 	/**
 	 * Check if there is DC_Multilingual installed
@@ -99,6 +105,18 @@ class SimplePoll extends Hybrid
 
 
 	/**
+	 * Store the module configuration
+	 * @param Database_Result
+	 * @return string
+	 */
+	public function __construct(Database_Result $objElement)
+	{
+		$this->arrConfig = $objElement->row();
+		parent::__construct($objElement);
+	}
+
+
+	/**
 	 * Display a wildcard in the back end
 	 * @return string
 	 */
@@ -115,6 +133,20 @@ class SimplePoll extends Hybrid
 			$this->Template->href = 'contao/main.php?do=simplepoll&amp;table=tl_simplepoll_option&amp;id=' . $this->id;
 
 			return $this->Template->parse();
+		}
+
+		// Find the newest poll
+		if ($this->arrConfig['simplepoll_current'])
+		{
+			$time = time();
+			$objPoll = $this->Database->prepare("SELECT id, start, stop FROM tl_simplepoll WHERE (start='' OR start<?) AND (stop='' OR stop>?)" . (!BE_USER_LOGGED_IN ? " AND published=1" : "") . " ORDER BY start DESC")
+									  ->limit(1)
+									  ->execute($time, $time);
+
+			if ($objPoll->numRows)
+			{
+				$this->id = $objPoll->id;
+			}
 		}
 
 		return parent::generate();

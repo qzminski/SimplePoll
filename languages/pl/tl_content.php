@@ -33,6 +33,7 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_content']['simplepoll'] = array('Sonda', 'Wybierz sondę, która ma zostać wyświetlona.');
+$GLOBALS['TL_LANG']['tl_content']['simplepoll']         = array('Sonda', 'Wybierz sondę, która ma zostać wyświetlona.');
+$GLOBALS['TL_LANG']['tl_content']['simplepoll_current'] = array('Użyj aktualnej sondy', 'Użyj aktualnej opublikowanej sondy bazując na wartościach pól "pokaż od" i "pokaż do". Zaznaczona sona będzie użyta jako fallback.');
 
 ?>

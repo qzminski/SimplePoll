@@ -60,7 +60,8 @@ CREATE TABLE `tl_simplepoll_option` (
 -- 
 
 CREATE TABLE `tl_content` (
-  `simplepoll` int(10) unsigned NOT NULL default '0'
+  `simplepoll` int(10) unsigned NOT NULL default '0',
+  `simplepoll_current` char(1) NOT NULL default ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
@@ -71,5 +72,6 @@ CREATE TABLE `tl_content` (
 -- 
 
 CREATE TABLE `tl_module` (
-  `simplepoll` int(10) unsigned NOT NULL default '0'
+  `simplepoll` int(10) unsigned NOT NULL default '0',
+  `simplepoll_current` char(1) NOT NULL default ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

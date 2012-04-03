@@ -40,7 +40,7 @@ $this->loadDataContainer('tl_content');
 /**
  * Add a palette to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['simplepoll'] = '{title_legend},name,headline,type;{include_legend},simplepoll;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['simplepoll'] = '{title_legend},name,headline,type;{include_legend},simplepoll,simplepoll_current;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 
 /**
@@ -53,6 +53,14 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['simplepoll'] = array
 	'inputType'               => 'select',
 	'options_callback'        => array('tl_content_simplepoll', 'getPolls'),
 	'eval'                    => array('mandatory'=>true, 'includeBlankOption'=>true, 'chosen'=>true, 'tl_class'=>'w50')
+);
+
+$GLOBALS['TL_DCA']['tl_module']['fields']['simplepoll_current'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_content']['simplepoll_current'],
+	'exclude'                 => true,
+	'inputType'               => 'checkbox',
+	'eval'                    => array('tl_class'=>'w50 m12')
 );
 
 ?>

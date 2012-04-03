@@ -21,5 +21,6 @@ $GLOBALS['TL_LANG']['MSC']['loginToVote'] = "Veuillez, s'il vous plaît, vous id
 $GLOBALS['TL_LANG']['MSC']['vote'] = "Voter";
 $GLOBALS['TL_LANG']['MSC']['showResults'] = "Afficher les résultats";
 $GLOBALS['TL_LANG']['MSC']['voteSubmitted'] = "Merci d'avoir voté !";
+$GLOBALS['TL_LANG']['MSC']['pollClosed']    = 'Ce sondage est clos.';
  
 ?>

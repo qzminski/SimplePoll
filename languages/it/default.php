@@ -35,5 +35,6 @@ $GLOBALS['TL_LANG']['MSC']['loginToVote']   = 'Registrati per partecipare al son
 $GLOBALS['TL_LANG']['MSC']['vote']          = 'Votare';
 $GLOBALS['TL_LANG']['MSC']['showResults']   = 'Risultat';
 $GLOBALS['TL_LANG']['MSC']['voteSubmitted'] = 'Grazie per aver partecipato!';
+$GLOBALS['TL_LANG']['MSC']['pollClosed']    = 'Questo sondaggio è chiuso.';
 
 ?>

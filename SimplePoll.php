@@ -156,6 +156,13 @@ class SimplePoll extends Hybrid
 		$this->Template->title = $objPoll->title;
 		$this->Template->featured = $objPoll->featured ? true : false;
 
+		// Display a message if the poll is closed
+		if ($blnClosed)
+		{
+			$this->Template->mclass = 'info';
+			$this->Template->message = $GLOBALS['TL_LANG']['MSC']['pollClosed'];
+		}
+
 		// Display a confirmation message
 		if ($_SESSION['SIMPLEPOLL'][$this->id] != '')
 		{
@@ -203,7 +210,7 @@ class SimplePoll extends Hybrid
 			'name' => 'options',
 			'options' => $arrOptions,
 			'inputType' => 'radio',
-			'eval' => array('mandatory'=>true)
+			'eval' => array('mandatory'=>true, 'disabled'=>$blnClosed)
 		);
 
 		$doNotSubmit = false;

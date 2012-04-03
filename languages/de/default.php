@@ -42,5 +42,6 @@ $GLOBALS['TL_LANG']['MSC']['loginToVote']   = 'Melden Sie sich an um an der Umfr
 $GLOBALS['TL_LANG']['MSC']['vote']          = 'Abstimmen';
 $GLOBALS['TL_LANG']['MSC']['showResults']   = 'Resultate';
 $GLOBALS['TL_LANG']['MSC']['voteSubmitted'] = 'Danke für Ihre Teilnahme!';
+$GLOBALS['TL_LANG']['MSC']['pollClosed']    = 'Diese Umfrage ist geschlossen.';
 
 ?>

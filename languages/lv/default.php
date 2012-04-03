@@ -43,5 +43,6 @@ $GLOBALS['TL_LANG']['MSC']['loginToVote']   = 'Lūdzu ienāc, lai balsotu.';
 $GLOBALS['TL_LANG']['MSC']['vote']          = 'Balsot';
 $GLOBALS['TL_LANG']['MSC']['showResults']   = 'Rezultāti';
 $GLOBALS['TL_LANG']['MSC']['voteSubmitted'] = 'Paldies par balsojumu!';
+$GLOBALS['TL_LANG']['MSC']['pollClosed']    = 'Ši apklausa uždaryta.';
 
 ?>

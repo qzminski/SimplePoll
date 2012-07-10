@@ -181,7 +181,7 @@ class SimplePoll extends Hybrid
 
 		$time = time();
 		$arrIps = deserialize($objPoll->ips, true);
-		$blnClosed = ($objPoll->closed || (($arrRow['start'] != '' && $arrRow['start'] > $time) && ($arrRow['stop'] != '' && $arrRow['stop'] < $time))) ? true : false;
+		$blnClosed = ($objPoll->closed || (($objPoll->start != '' && $objPoll->start > $time) || ($objPoll->stop != '' && $objPoll->stop < $time))) ? true : false;
 		$blnHasVoted = $this->hasVoted($arrIps, $objPoll->id);
 		$strFormId = 'poll_' . $this->id;
 

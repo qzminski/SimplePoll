@@ -62,5 +62,6 @@ $GLOBALS['TL_LANG']['tl_simplepoll_option']['copy']       = array('Duplikuj opcj
 $GLOBALS['TL_LANG']['tl_simplepoll_option']['delete']     = array('Usuń opcję', 'Usuń opcję ID %s');
 $GLOBALS['TL_LANG']['tl_simplepoll_option']['show']       = array('Szczegóły opcji', 'Pokaż szczegóły opcji ID %s');
 $GLOBALS['TL_LANG']['tl_simplepoll_option']['toggle']     = array('Publikuj/ukryj opcję', 'Publikuj/ukryh opcję ID %s');
+$GLOBALS['TL_LANG']['tl_simplepoll_option']['voters']     = array('Zobacz głosujących', 'Zobacz kto głosował za opcją ID %s');
 
 ?>

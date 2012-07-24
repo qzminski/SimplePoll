@@ -291,7 +291,8 @@ class SimplePoll extends Hybrid
 			$arrIps[] = array
 			(
 				'id' => FE_USER_LOGGED_IN ? $this->User->id : $this->Environment->remoteAddr,
-				'expires' => $intExpires
+				'expires' => $intExpires,
+				'option' => $objWidget->value
 			);
 
 			// Update the database

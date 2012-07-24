@@ -97,6 +97,13 @@ $GLOBALS['TL_DCA']['tl_simplepoll_option'] = array
 				'label'               => &$GLOBALS['TL_LANG']['tl_simplepoll_option']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.gif'
+			),
+			'voters' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['tl_simplepoll_option']['voters'],
+				'icon'                => 'system/modules/simplepoll/html/voters.png',
+				'attributes'          => 'data-lightbox="help"',
+				'button_callback'     => array('tl_simplepoll_option', 'viewVoters')
 			)
 		)
 	),
@@ -172,6 +179,63 @@ class tl_simplepoll_option extends Backend
 		$width = $arrRow['votes'] ? (round(($arrRow['votes'] / array_sum($arrVotes)), 2) * 150) : 0;
 
 		return '<div><div style="display:inline-block;margin-right:8px;background-color:#8AB858;height:10px;width:' . $width . 'px;"></div>' . $arrRow['title'] . ' <span style="padding-left:3px;color:#b3b3b3;">[' . sprintf((($arrRow['votes'] == 1) ? $GLOBALS['TL_LANG']['tl_simplepoll_option']['voteSingle'] : $GLOBALS['TL_LANG']['tl_simplepoll_option']['votePlural']), $arrRow['votes']) . ']</span></div>';
+	}
+
+
+	/**
+	 * Return the "view voters" button
+	 * @param array
+	 * @param string
+	 * @param string
+	 * @param string
+	 * @param string
+	 * @param string
+	 * @return string
+	 */
+	public function viewVoters($row, $href, $label, $title, $icon, $attributes)
+	{
+		static $arrIps;
+
+		// Get the IPs
+		if (!is_array($arrIps))
+		{
+			$objParent = $this->Database->prepare("SELECT ips FROM tl_simplepoll WHERE id=?")->limit(1)->execute($row['pid']);
+			$arrIps = deserialize($objParent->ips, true);
+		}
+
+		// Display a list of voted users
+		if (strlen($this->Input->get('oid')))
+		{
+			foreach ($arrIps as $arrIp)
+			{
+				if ($arrIp['option'] == $this->Input->get('oid'))
+				{
+					echo (is_numeric($arrIp['id']) ? 'ID - ' : 'IP - ') . $arrIp['id'] . '<br>';
+				}
+			}
+
+			exit;
+		}
+
+		$href .= '&amp;oid='.$row['id'];
+		$arrCurrent = array();
+
+		// Get the current records
+		foreach ($arrIps as $arrIp)
+		{
+			if ($arrIp['option'] == $row['id'])
+			{
+				$arrCurrent[] = $arrIp['id'];
+			}
+		}
+
+		// The option has no votes
+		if (empty($arrCurrent))
+		{
+			return $this->generateImage('system/modules/simplepoll/html/voters_.png');
+		}
+
+		return '<a href="'.$this->addToUrl($href).'" title="'.specialchars($title).'"'.$attributes.'>'.$this->generateImage($icon, $label).'</a> ';
 	}
 
 

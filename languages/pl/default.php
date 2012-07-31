@@ -39,6 +39,7 @@ $GLOBALS['TL_LANG']['CTE']['simplepoll'] = array('Sonda', 'Wyświetla sondę.');
 /**
  * Miscellaneous
  */
+$GLOBALS['TL_LANG']['MSC']['votes']         = 'głos(y)';
 $GLOBALS['TL_LANG']['MSC']['loginToVote']   = 'Zaloguj się, by zagłosować.';
 $GLOBALS['TL_LANG']['MSC']['vote']          = 'Głosuj';
 $GLOBALS['TL_LANG']['MSC']['showResults']   = 'Pokaż wyniki';

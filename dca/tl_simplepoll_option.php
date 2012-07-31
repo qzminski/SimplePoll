@@ -206,12 +206,39 @@ class tl_simplepoll_option extends Backend
 		// Display a list of voted users
 		if (strlen($this->Input->get('oid')))
 		{
+			$voters = array();
+
 			foreach ($arrIps as $arrIp)
 			{
 				if ($arrIp['option'] == $this->Input->get('oid'))
 				{
-					echo (is_numeric($arrIp['id']) ? 'ID - ' : 'IP - ') . $arrIp['id'] . '<br>';
+					if (array_key_exists($arrIp['id'], $voters))
+					{
+						$voters[$arrIp['id']]['count']++;
+						continue;
+					}
+
+					$voters[$arrIp['id']] = array('id'=>$arrIp['id'], 'count'=>1);
+
+					// Get the member name
+					if (is_numeric($arrIp['id']))
+					{
+						$objMember = $this->Database->prepare("SELECT firstname, lastname FROM tl_member WHERE id=?")
+													->limit(1)
+													->execute($arrIp['id']);
+
+						if ($objMember->numRows)
+						{
+							$voters[$arrIp['id']]['id'] = $objMember->firstname . ' ' . $objMember->lastname . ' (ID ' . $arrIp['id'] . ')';
+						}
+					}
 				}
+			}
+
+			// Output the result
+			foreach ($voters as $voter)
+			{
+				echo $voter['id'] . ' - ' . $voter['count'] . ' ' . $GLOBALS['TL_LANG']['MSC']['votes'] . '<br>';
 			}
 
 			exit;

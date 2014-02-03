@@ -78,7 +78,7 @@ class SimplePoll extends Hybrid
 	 */
 	public static function checkMultilingual()
 	{
-		return (file_exists(TL_ROOT . '/system/drivers/DC_Multilingual.php') && count(self::getAvailableLanguages()) > 1) ? true : false;
+		return (file_exists(TL_ROOT . '/system/modules/dc_multilingual/drivers/DC_Multilingual.php') && count(self::getAvailableLanguages()) > 1) ? true : false;
 	}
 
 

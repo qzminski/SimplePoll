@@ -303,7 +303,7 @@ class SimplePoll extends Hybrid
 
 			// Redirect or reload the page
 			$_SESSION['SIMPLEPOLL'][$this->id] = $GLOBALS['TL_LANG']['MSC']['voteSubmitted'];
-			$this->jumpToOrReload($this->jumpTo);
+			$this->jumpToOrReload($objPoll->jumpTo);
 		}
 	}
 

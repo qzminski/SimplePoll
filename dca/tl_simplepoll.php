@@ -248,6 +248,7 @@ if (SimplePoll::checkMultilingual())
 
 	// Make "title" field translatable
 	$GLOBALS['TL_DCA']['tl_simplepoll']['fields']['title']['eval']['translatableFor'] = '*';
+	$GLOBALS['TL_DCA']['tl_simplepoll']['fields']['jumpTo']['eval']['translatableFor'] = '*';
 }
 
 
